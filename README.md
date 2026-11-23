@@ -1,18 +1,51 @@
-# Donyaye Koochooloo
+# Donyaye Koochooloo · دنیای کوچولوها
 
-Educational and entertainment app for children aged 1-10.
+A Persian-first, offline Android app for children ages 1–10. The home
+screen defaults to Persian (RTL). Open the gear icon to choose an age or switch
+to English. Settings apply for the current session only; the parent screen is a
+separate settings area, not a parental lock.
 
-## Features
-- Persian and English support
-- Age-based learning
-- Songs and lullabies
-- Educational stories
-- Interactive games
+**Find the Animal** is a four-round game with two choices for ages 1–3,
+three for ages 4–6, and four for ages 7–10. Children ages 1–6 also get a
+picture clue, so they can play without reading.
+Children’s songs, lullabies, and educational stories have placeholder screens.
+The app uses system emoji and Material icons and has no accounts, backend, ads,
+analytics, or stored child profile.
 
-## Technology
-- Flutter / Dart
-- GitHub Actions
-- Python / FastAPI (future backend)
+## Get the debug APK
 
-## Status
-Initial development
+The **Android Debug APK** workflow runs on pushes to `develop` and pull
+requests targeting `develop`. Once the workflow also exists on the repository’s
+default branch, it can be run manually from **Actions → Android Debug APK →
+Run workflow**; select `develop` in the branch picker.
+
+Open the successful run and download **donyaye-koochooloo-debug-apk** under
+**Artifacts**. Extract `app-debug.apk` from the ZIP and install it on the tablet.
+Android may ask you to allow installs from the app you used to open the APK.
+This is a debug build for testing, not a production release.
+
+## Project layout and verification
+
+- `lib/features/` contains the home, parent settings, and game screens.
+- `lib/models/` defines the age bands. `lib/widgets/` contains shared layout.
+- `lib/l10n/` contains the Persian and English ARB translations. Flutter
+  generates the localization Dart files; edit the ARBs, not the generated files.
+- `test/` covers age grouping, language and layout direction, placeholder
+  navigation, and gameplay.
+
+No local Flutter SDK is required on the Termux tablet. The workflow runs the
+following commands with stable Flutter on a GitHub-hosted runner. The explicit
+Dart name works even though the repository directory contains hyphens.
+
+```sh
+flutter create --template=app --empty --platforms=android \
+  --project-name=donyaye_koochooloo --org=com.donyayekoochooloo \
+  --no-pub --no-overwrite .
+flutter pub get
+flutter gen-l10n
+flutter analyze --no-pub
+flutter test --no-pub
+flutter build apk --debug --no-pub
+```
+
+The generated `android/` directory is intentionally not checked in.

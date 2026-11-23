@@ -1,0 +1,49 @@
+{
+  "@@locale": "en",
+  "appTitle": "Donyaye Koochooloo",
+  "homeGreeting": "Hello, little explorer!",
+  "homeIntro": "A little world to learn and play in.",
+  "chooseActivity": "What shall we do today?",
+  "songs": "Children’s songs",
+  "songsHint": "Sing along and move",
+  "lullabies": "Lullabies",
+  "lullabiesHint": "Slow down and get cozy",
+  "stories": "Educational stories",
+  "storiesHint": "Discover something new",
+  "games": "Educational games",
+  "gamesHint": "Play Find the Animal",
+  "comingSoon": "Coming soon!",
+  "comingSoonHint": "There’s nothing to play here yet. Try Find the Animal while you wait!",
+  "parentSettings": "Parent settings",
+  "childAge": "Child’s age",
+  "childAgeHint": "Choose an age to adjust the game’s difficulty.",
+  "language": "App language",
+  "saveSettings": "Done",
+  "ageGroupYoung": "Ages 1–3",
+  "ageGroupMiddle": "Ages 4–6",
+  "ageGroupOlder": "Ages 7–10",
+  "findAnimal": "Find the Animal",
+  "findAnimalPrompt": "Can you find the {animal}?",
+  "@findAnimalPrompt": {
+    "placeholders": { "animal": { "type": "String" } }
+  },
+  "roundProgress": "Round {current} of {total}",
+  "@roundProgress": {
+    "placeholders": {
+      "current": { "type": "int", "format": "decimalPattern" },
+      "total": { "type": "int", "format": "decimalPattern" }
+    }
+  },
+  "correctAnswer": "Well done! You found it!",
+  "wrongAnswer": "Good try! Pick another animal.",
+  "nextRound": "Next animal",
+  "finishGame": "Finish",
+  "gameComplete": "You found all the animals!",
+  "playAgain": "Play again",
+  "animalCat": "cat",
+  "animalRabbit": "rabbit",
+  "animalFrog": "frog",
+  "animalDog": "dog",
+  "animalLion": "lion",
+  "animalOwl": "owl"
+}
