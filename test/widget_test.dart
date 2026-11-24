@@ -39,8 +39,8 @@ void main() {
       await _tap(tester, find.text(category));
       expect(find.text('به‌زودی!'), findsOneWidget);
       expect(find.text('حیوان رو پیدا کن'), findsOneWidget);
-      await tester.pageBack();
-      await tester.pumpAndSettle();
+      await _tap(tester, find.byType(BackButton));
+      expect(title, findsOneWidget);
     }
     expect(tester.takeException(), isNull);
   });
