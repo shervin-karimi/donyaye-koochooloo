@@ -5,7 +5,7 @@
   "homeIntro": "A little world to learn and play in.",
   "chooseActivity": "What shall we do today?",
   "songs": "Children’s songs",
-  "songsHint": "Sing along and move",
+  "songsHint": "Dance to a happy tune",
   "lullabies": "Lullabies",
   "lullabiesHint": "Slow down and get cozy",
   "stories": "Educational stories",
@@ -45,5 +45,16 @@
   "animalFrog": "frog",
   "animalDog": "dog",
   "animalLion": "lion",
-  "animalOwl": "owl"
+  "animalOwl": "owl",
+  "happyMusic": "Happy music",
+  "bedtimeMusic": "Bedtime music",
+  "colorsVideo": "Colors",
+  "colorsVideoHint": "Watch four colorful friends",
+  "mediaPlay": "Play",
+  "mediaPause": "Pause",
+  "mediaError": "Couldn’t play this media. Try again.",
+  "colorRed": "Red",
+  "colorBlue": "Blue",
+  "colorYellow": "Yellow",
+  "colorGreen": "Green"
 }

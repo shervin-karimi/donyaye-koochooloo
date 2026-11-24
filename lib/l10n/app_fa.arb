@@ -5,7 +5,7 @@
   "homeIntro": "اینجا با هم بازی می‌کنیم و چیزهای تازه یاد می‌گیریم.",
   "chooseActivity": "امروز چه کار کنیم؟",
   "songs": "آهنگ‌های کودکانه",
-  "songsHint": "با هم بخونیم و برقصیم",
+  "songsHint": "با یه آهنگ شاد برقصیم",
   "lullabies": "لالایی‌ها",
   "lullabiesHint": "آروم بشیم و استراحت کنیم",
   "stories": "قصه‌های آموزشی",
@@ -36,5 +36,16 @@
   "animalFrog": "قورباغه",
   "animalDog": "سگ",
   "animalLion": "شیر",
-  "animalOwl": "جغد"
+  "animalOwl": "جغد",
+  "happyMusic": "آهنگ شاد",
+  "bedtimeMusic": "آهنگ خواب",
+  "colorsVideo": "رنگ‌ها",
+  "colorsVideoHint": "چهار دوست رنگی رو ببین",
+  "mediaPlay": "پخش",
+  "mediaPause": "مکث",
+  "mediaError": "پخش نشد. دوباره امتحان کن.",
+  "colorRed": "قرمز",
+  "colorBlue": "آبی",
+  "colorYellow": "زرد",
+  "colorGreen": "سبز"
 }
