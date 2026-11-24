@@ -39,7 +39,8 @@ void main() {
       await _tap(tester, find.text(category));
       expect(find.text('به‌زودی!'), findsOneWidget);
       expect(find.text('حیوان رو پیدا کن'), findsOneWidget);
-      await _tap(tester, find.byType(BackButton));
+      Navigator.of(tester.element(find.text('به‌زودی!'))).pop();
+      await tester.pumpAndSettle();
       expect(title, findsOneWidget);
     }
     expect(tester.takeException(), isNull);
