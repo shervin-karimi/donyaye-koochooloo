@@ -4,13 +4,15 @@ import '../../l10n/app_localizations.dart';
 import '../../models/child_age.dart';
 import '../../widgets/page_body.dart';
 import '../animals/find_animal_screen.dart';
+import '../media/offline_media_screen.dart';
 import 'coming_soon_screen.dart';
 
 enum Activity {
   songs(Icons.music_note_rounded, Color(0xFFFFDFE8), Color(0xFF96264A)),
   lullabies(Icons.nightlight_round, Color(0xFFE9DFFF), Color(0xFF5F3E9F)),
   stories(Icons.auto_stories_rounded, Color(0xFFFFE7B8), Color(0xFF805000)),
-  games(Icons.extension_rounded, Color(0xFFCEEFE0), Color(0xFF1C674D));
+  games(Icons.extension_rounded, Color(0xFFCEEFE0), Color(0xFF1C674D)),
+  colors(Icons.palette_rounded, Color(0xFFDDEEFF), Color(0xFF204D84));
 
   const Activity(this.icon, this.surface, this.ink);
 
@@ -23,6 +25,7 @@ enum Activity {
     lullabies => strings.lullabies,
     stories => strings.stories,
     games => strings.games,
+    colors => strings.colorsVideo,
   };
 
   String hint(AppLocalizations strings) => switch (this) {
@@ -30,6 +33,7 @@ enum Activity {
     lullabies => strings.lullabiesHint,
     stories => strings.storiesHint,
     games => strings.gamesHint,
+    colors => strings.colorsVideoHint,
   };
 }
 
@@ -46,17 +50,21 @@ class HomeScreen extends StatelessWidget {
   void _openActivity(BuildContext context, Activity activity) {
     Navigator.of(context).push<void>(
       MaterialPageRoute<void>(
-        builder: (context) => activity == Activity.games
-            ? FindAnimalScreen(ageGroup: ageGroup)
-            : ComingSoonScreen(
-                title: activity.title(AppLocalizations.of(context)!),
-                icon: activity.icon,
-                onPlay: () => Navigator.of(context).pushReplacement<void, void>(
-                  MaterialPageRoute<void>(
-                    builder: (_) => FindAnimalScreen(ageGroup: ageGroup),
-                  ),
-                ),
+        builder: (context) => switch (activity) {
+          Activity.games => FindAnimalScreen(ageGroup: ageGroup),
+          Activity.songs => const OfflineMediaScreen(media: OfflineMedia.happy),
+          Activity.lullabies => const OfflineMediaScreen(media: OfflineMedia.bedtime),
+          Activity.colors => const OfflineMediaScreen(media: OfflineMedia.colors),
+          Activity.stories => ComingSoonScreen(
+            title: activity.title(AppLocalizations.of(context)!),
+            icon: activity.icon,
+            onPlay: () => Navigator.of(context).pushReplacement<void, void>(
+              MaterialPageRoute<void>(
+                builder: (_) => FindAnimalScreen(ageGroup: ageGroup),
               ),
+            ),
+          ),
+        },
       ),
     );
   }

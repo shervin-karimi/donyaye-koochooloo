@@ -8,7 +8,9 @@ separate settings area, not a parental lock.
 **Find the Animal** is a four-round game with two choices for ages 1–3,
 three for ages 4–6, and four for ages 7–10. Children ages 1–6 also get a
 picture clue, so they can play without reading.
-Children’s songs, lullabies, and educational stories have placeholder screens.
+The songs and lullabies screens each play an original instrumental melody offline.
+**Colors** has a short offline animation with names in both app languages.
+Educational stories still have a placeholder screen.
 The app uses system emoji and Material icons and has no accounts, backend, ads,
 analytics, or stored child profile.
 
@@ -30,7 +32,7 @@ This is a debug build for testing, not a production release.
 - `lib/models/` defines the age bands. `lib/widgets/` contains shared layout.
 - `lib/l10n/` contains the Persian and English ARB translations. Flutter
   generates the localization Dart files; edit the ARBs, not the generated files.
-- `test/` covers age grouping, language and layout direction, placeholder
+- `test/` covers age grouping, language and layout direction, activity
   navigation, and gameplay.
 
 No local Flutter SDK is required on the Termux tablet. The workflow runs the
@@ -48,4 +50,5 @@ flutter test --no-pub
 flutter build apk --debug --no-pub
 ```
 
-The generated `android/` directory is intentionally not checked in.
+Android platform files are generated, with the custom launcher icons tracked in
+`android/app/src/main/res/`.
